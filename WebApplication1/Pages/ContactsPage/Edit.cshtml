@@ -1,0 +1,79 @@
+﻿@page
+@model WebApplication1.Pages.ContactsPage.EditModel
+@{
+}
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-3">
+
+        <h1>Edit Contact</h1>
+
+        @if (!string.IsNullOrEmpty(Model.errorMessage))
+        {
+            <div class="alert alert-danger">
+                @Model.errorMessage
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.successmessage))
+        {
+            <div class="alert alert-success">
+                @Model.successmessage
+            </div>
+        }
+
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Contactsdto.FirstName">ID</label>
+                <input  readonly asp-for="Contactsdto.Id" value="@Model.Contacts.Id"
+                class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.FirstName"></label>
+                <input asp-for="Contactsdto.FirstName" class="form-control" />
+                <span asp-validation-for="Contactsdto.FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.LastName"></label>
+                <input asp-for="Contactsdto.LastName" class="form-control" />
+                <span asp-validation-for="Contactsdto.LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.Email"></label>
+                <input asp-for="Contactsdto.Email" class="form-control" />
+                <span asp-validation-for="Contactsdto.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.ContactType"></label>
+                <input asp-for="Contactsdto.ContactType" class="form-control" />
+                <span asp-validation-for="Contactsdto.ContactType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.Phone"></label>
+                <input asp-for="Contactsdto.Phone" class="form-control" />
+                <span asp-validation-for="Contactsdto.Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.PostalCode"></label>
+                <input asp-for="Contactsdto.PostalCode" class="form-control" />
+                <span asp-validation-for="Contactsdto.PostalCode" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contactsdto.Country"></label>
+                <input asp-for="Contactsdto.Country" class="form-control" />
+                <span asp-validation-for="Contactsdto.Country" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create Contact</button>
+            </div>
+        </form>
+
+    </div>
+</div>
